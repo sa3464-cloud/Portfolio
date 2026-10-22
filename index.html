@@ -8,15 +8,15 @@
   <style>
     :root {
       color-scheme: light;
-      --paper: #f7f5ef;
-      --ink: #172a35;
-      --muted: #53656d;
-      --accent: #086d69;
-      --accent-dark: #075552;
-      --line: #d9ded8;
-      --card: #fffefa;
-      --focus: #c05a27;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --paper: #f4f0e6;
+      --ink: #20352d;
+      --muted: #5b6d63;
+      --accent: #267052;
+      --accent-dark: #194d39;
+      --line: #d8ded3;
+      --card: #fffdf7;
+      --focus: #b85c3c;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -75,7 +75,8 @@
       text-transform: uppercase;
     }
 
-    h1, h2, p { margin-top: 0; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3, .highlight strong { font-family: Georgia, "Times New Roman", serif; }
     h1 { max-width: 740px; margin-bottom: 22px; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.04; letter-spacing: -.055em; }
     h2 { margin-bottom: 16px; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; letter-spacing: -.03em; }
     .lead { max-width: 680px; margin-bottom: 28px; color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.25rem); }

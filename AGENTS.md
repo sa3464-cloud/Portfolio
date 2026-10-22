@@ -13,7 +13,7 @@ Keep the navigation and content aligned with the pages that actually exist. Upda
 
 ## Design
 
-Use a clean, readable, understated portfolio style with generous whitespace and clear visual hierarchy. Prefer a light neutral background, dark text, and one restrained accent color. Use system sans-serif fonts unless the project establishes a different typeface. Keep layouts responsive and accessible, with visible keyboard focus and sufficient color contrast. Update this section when the design changes.
+Use a warm, editorial portfolio style with generous whitespace and clear visual hierarchy. Use parchment tones, deep forest-green accents, and a restrained clay highlight. Set headings in Georgia with an Arial/Helvetica sans-serif body font. Keep layouts responsive and accessible, with visible keyboard focus and sufficient color contrast. Update this section when the design changes.
 
 ## Implementation rules
 
