@@ -4,10 +4,8 @@
 
 This repository contains a personal portfolio website. Build a clear landing page that introduces the portfolio owner and guides visitors to their work and contact details. Include these pages or sections as the project grows:
 
-- Home: a brief introduction and featured work.
-- Projects: selected projects with concise descriptions and links.
-- About: background, skills, and experience.
-- Contact: a direct way to get in touch.
+- Home: a brief introduction and featured work, with About, Skills, and Contact sections.
+- Projects: a dedicated page with selected projects, concise descriptions, and links.
 
 Keep the navigation and content aligned with the pages that actually exist. Update this file when the site purpose or structure changes.
 
