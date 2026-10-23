@@ -128,20 +128,35 @@
     .about-card p { margin-bottom: 0; color: var(--muted); }
     .about-card .detail { margin-bottom: 8px; color: var(--ink); font-weight: 700; }
 
-    .project {
+    .project-grid {
       display: grid;
-      grid-template-columns: minmax(180px, .55fr) minmax(0, 1.45fr);
-      gap: 30px;
-      margin-top: 26px;
-      padding: 28px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .project {
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--card);
     }
 
+    .project-visual {
+      display: grid;
+      min-height: 190px;
+      margin: 0;
+      place-items: center;
+      overflow: hidden;
+      background: #e8eee6;
+    }
+
+    .project-visual svg { display: block; width: 100%; height: 190px; }
+    .project-copy { padding: 22px; }
     .project h3 { margin: 0; font-size: 1.16rem; }
-    .project p { margin-bottom: 0; color: var(--muted); }
-    .tag { display: inline-block; margin-top: 12px; color: var(--accent-dark); font-size: .86rem; font-weight: 700; }
+    .project p { margin: 14px 0 0; color: var(--muted); }
+    .tag { display: inline-block; margin-top: 10px; color: var(--accent-dark); font-size: .86rem; font-weight: 700; }
+    .project-link { display: inline-flex; margin-top: 18px; font-weight: 700; text-underline-offset: 3px; }
 
     .skills { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
     .skills li { padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--muted); font-size: .92rem; }
@@ -155,7 +170,7 @@
       .hero { grid-template-columns: 1fr; padding-block: 72px; }
       .highlight { max-width: 360px; }
       .about-grid { grid-template-columns: 1fr; }
-      .project { grid-template-columns: 1fr; gap: 10px; }
+      .project-grid { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -212,22 +227,82 @@
       <section class="section" id="project" aria-labelledby="project-title">
         <p class="eyebrow">Selected work</p>
         <h2 id="project-title">Projects</h2>
-        <article class="project">
-          <div>
-            <h3>Python Fundamentals &amp; Data Applications</h3>
-            <span class="tag">Python · APIs · SQLite</span>
-          </div>
-          <p>A collection of Python exercises that apply core programming concepts to practical tasks: analyzing temperatures and scores, managing inventory, transforming lists, and adding matrices. The notebook also retrieves data from web APIs and saves topic-based news results in a SQLite database.</p>
-        </article>
-        <article class="project">
-          <div>
-            <h3>Sparks in Our Interest</h3>
-            <span class="tag">Electrical Technology Shop Class · 1st place, 2025 Middlesex Tech Expo</span>
-          </div>
-          <p>I designed and built a scale model of my school using materials from the school shop. Functional lights and a windmill demonstrated the school's potential for sustainable energy. The project earned first place among eight entries.</p>
-        </article>
-      </section>
+        <p class="section-intro">A selection of engineering design, programming, and shop class work.</p>
+        <div class="project-grid">
+          <article class="project">
+            <figure class="project-visual">
+              <svg viewBox="0 0 480 240" role="img" aria-labelledby="cad-art-title" xmlns="http://www.w3.org/2000/svg">
+                <title id="cad-art-title">Illustrated 3D CAD model preview</title>
+                <rect width="480" height="240" fill="#e8eee6"/>
+                <path d="M55 189H425M82 211H398" stroke="#c3d2c5" stroke-width="2"/>
+                <path d="m164 147 77-43 91 42-78 45z" fill="#b9cbbb" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m164 147 90 44v-50l-90-43z" fill="#789a80" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m254 191 78-45v-49l-78 44z" fill="#52775f" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m202 126 39-22 42 20-39 23z" fill="#f4f0e6" stroke="#315947" stroke-width="2"/>
+                <path d="m254 147 29-17v28l-29 17z" fill="#d9e5d9" stroke="#315947" stroke-width="2"/>
+                <circle cx="351" cy="66" r="25" fill="#f3dfc8"/>
+                <path d="M351 43v46M328 66h46M335 50l32 32M367 50l-32 32" stroke="#b85c3c" stroke-width="3"/>
+                <circle cx="351" cy="66" r="5" fill="#b85c3c"/>
+              </svg>
+            </figure>
+            <div class="project-copy">
+              <h3>3D CAD Design</h3>
+              <span class="tag">Onshape · Engineering design</span>
+              <p>A 3D design project created in Onshape. Open the model to explore the geometry and design details in the interactive workspace.</p>
+              <a class="project-link" href="https://njit.onshape.com/documents/0aea7aea014eb0422e56f4d3/w/9cc1cb31d724f7c63276c599/e/1fc36db1c52118f32a6496ce" target="_blank" rel="noopener noreferrer">Open the Onshape model <span aria-hidden="true">&#8599;</span></a>
+            </div>
+          </article>
 
+          <article class="project">
+            <figure class="project-visual">
+              <svg viewBox="0 0 480 240" role="img" aria-labelledby="python-art-title" xmlns="http://www.w3.org/2000/svg">
+                <title id="python-art-title">Illustrated Python notebook preview</title>
+                <rect width="480" height="240" fill="#e8eee6"/>
+                <rect x="70" y="27" width="340" height="188" rx="10" fill="#fffdf7" stroke="#c3d2c5" stroke-width="2"/>
+                <path d="M70 59h340" stroke="#c3d2c5" stroke-width="2"/>
+                <circle cx="91" cy="43" r="5" fill="#b85c3c"/><circle cx="109" cy="43" r="5" fill="#d7b16d"/><circle cx="127" cy="43" r="5" fill="#789a80"/>
+                <rect x="91" y="77" width="178" height="78" rx="5" fill="#f0f3ed"/>
+                <path d="M108 96h74M108 113h119M108 130h92" stroke="#52775f" stroke-width="5" stroke-linecap="round"/>
+                <path d="M99 96h3M99 113h3M99 130h3" stroke="#b85c3c" stroke-width="5" stroke-linecap="round"/>
+                <rect x="286" y="77" width="103" height="106" rx="5" fill="#f7f4eb"/>
+                <path d="M303 165v-22h15v22M327 165v-43h15v43M351 165v-59h15v59" fill="#789a80"/>
+                <path d="M300 166h70" stroke="#315947" stroke-width="2"/>
+                <path d="M91 174h155" stroke="#d8ded3" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </figure>
+            <div class="project-copy">
+              <h3>Python Fundamentals &amp; Data Applications</h3>
+              <span class="tag">Python · APIs · SQLite</span>
+              <p>A notebook of practical programming exercises, data transformations, and API work, including saving topic-based news results to a SQLite database.</p>
+              <a class="project-link" href="https://colab.research.google.com/drive/19fRnEFeNv5ZPYm5_3ECFX3wJeFePKDI2" target="_blank" rel="noopener noreferrer">Open the Colab notebook <span aria-hidden="true">&#8599;</span></a>
+            </div>
+          </article>
+
+          <article class="project">
+            <figure class="project-visual">
+              <svg viewBox="0 0 480 240" role="img" aria-labelledby="school-art-title" xmlns="http://www.w3.org/2000/svg">
+                <title id="school-art-title">Illustrated school model with lights and a windmill</title>
+                <rect width="480" height="240" fill="#e8eee6"/>
+                <circle cx="370" cy="55" r="25" fill="#f3dfc8"/>
+                <path d="m86 158 131-68 161 69-133 69z" fill="#b9cbbb" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m86 158 159 70v-71L86 89z" fill="#789a80" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m245 228 133-69V88l-133 69z" fill="#52775f" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m86 89 132-68 160 67-133 69z" fill="#d9e5d9" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
+                <path d="m153 122 31 14v27l-31-14zM202 144l25 11v28l-25-11zM272 155l29-15v27l-29 15zM321 129l30-15v27l-30 15z" fill="#f3dfc8" stroke="#315947" stroke-width="2"/>
+                <path d="M399 124V48m0 0-20-18m20 18 22-15m-22 15v23" fill="none" stroke="#b85c3c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="399" cy="48" r="5" fill="#b85c3c"/>
+                <path d="M53 218h376" stroke="#c3d2c5" stroke-width="3"/>
+              </svg>
+            </figure>
+            <div class="project-copy">
+              <h3>Sparks in Our Interest</h3>
+              <span class="tag">Electrical Technology · 1st place, 2025 Middlesex Tech Expo</span>
+              <p>A scale model of my school with working lights and a windmill, built from shop materials to explore sustainable energy. It earned first place among eight projects at the 2025 Middlesex Tech Expo.</p>
+              <a class="project-link" href="https://drive.google.com/file/d/19LQHEqdbEwi-O47jrmDjEgJBhbJyBkG-/view?usp=sharing" target="_blank" rel="noopener noreferrer">View project file <span aria-hidden="true">&#8599;</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
       <section class="section" id="skills" aria-labelledby="skills-title">
         <p class="eyebrow">What I bring</p>
         <h2 id="skills-title">Skills &amp; experience</h2>
