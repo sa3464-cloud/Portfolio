@@ -11,12 +11,19 @@
   <div class="shell">
     <header>
       <a class="brand" href="#home">Seth Abram</a>
-      <nav aria-label="Main navigation">
+      <nav id="site-navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#project">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="header-controls">
+        <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="menu-label">Menu</span>
+        </button>
+        <button class="theme-toggle" type="button" aria-pressed="false">Use dark theme</button>
+      </div>
     </header>
 
     <main id="home">
@@ -149,7 +156,59 @@
     </footer>
   </div>
   <script>
+    const siteHeader = document.querySelector("header");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNavigation = document.getElementById("site-navigation");
+    const menuLabel = document.querySelector(".menu-label");
+    const themeToggle = document.querySelector(".theme-toggle");
+    const root = document.documentElement;
+    const mobileLayout = window.matchMedia("(max-width: 720px)");
+
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    siteHeader.classList.add("menu-enhanced");
+    menuToggle.addEventListener("click", () => {
+      const isOpen = siteHeader.classList.toggle("menu-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuLabel.textContent = isOpen ? "Close menu" : "Menu";
+    });
+    siteNavigation.addEventListener("click", (event) => {
+      if (event.target.closest("a") && mobileLayout.matches) {
+        siteHeader.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuLabel.textContent = "Menu";
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && siteHeader.classList.contains("menu-open")) {
+        siteHeader.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuLabel.textContent = "Menu";
+        menuToggle.focus();
+      }
+    });
+
+    const setTheme = (theme) => {
+      const isDark = theme === "dark";
+      root.dataset.theme = isDark ? "dark" : "light";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      themeToggle.textContent = isDark ? "Use light theme" : "Use dark theme";
+    };
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "light") setTheme(savedTheme);
+    } catch {
+      // Theme switching still works when browser storage is unavailable.
+    }
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      setTheme(nextTheme);
+      try {
+        localStorage.setItem("portfolio-theme", nextTheme);
+      } catch {
+        // Keep the selected theme for this page view if storage is unavailable.
+      }
+    });
   </script>
 </body>
 </html>
