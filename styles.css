@@ -182,7 +182,6 @@
   --focus: #e89a79;
 }
 
-.header-controls { display: flex; align-items: center; gap: 10px; }
 
 .menu-toggle, .theme-toggle {
   display: inline-flex;
@@ -208,7 +207,6 @@
 
 @media (max-width: 720px) {
   header { align-items: center; flex-direction: row; flex-wrap: wrap; gap: 16px; }
-  .header-controls { margin-left: auto; }
   .menu-enhanced .menu-toggle { display: inline-flex; }
   .menu-enhanced:not(.menu-open) nav { display: none; }
   nav { flex-basis: 100%; flex-direction: column; gap: 0; }

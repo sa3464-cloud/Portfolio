@@ -11,19 +11,17 @@
   <div class="shell">
     <header>
       <a class="brand" href="#home">Seth Abram</a>
+      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="menu-label">Menu</span>
+      </button>
       <nav id="site-navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#project">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="header-controls">
-        <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
-          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-          <span class="menu-label">Menu</span>
-        </button>
-        <button class="theme-toggle" type="button" aria-pressed="false">Use dark theme</button>
-      </div>
+      <button class="theme-toggle" type="button" aria-pressed="false">Use dark theme</button>
     </header>
 
     <main id="home">
@@ -177,6 +175,7 @@
         siteHeader.classList.remove("menu-open");
         menuToggle.setAttribute("aria-expanded", "false");
         menuLabel.textContent = "Menu";
+        menuToggle.focus();
       }
     });
     document.addEventListener("keydown", (event) => {
