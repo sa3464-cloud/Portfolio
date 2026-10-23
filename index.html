@@ -144,14 +144,15 @@
 
     .project-visual {
       display: grid;
-      min-height: 190px;
+      height: 260px;
       margin: 0;
       place-items: center;
       overflow: hidden;
       background: #e8eee6;
     }
 
-    .project-visual svg { display: block; width: 100%; height: 190px; }
+    .project-visual svg { display: block; width: 100%; height: 100%; }
+    .project-visual img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .project-copy { padding: 22px; }
     .project h3 { margin: 0; font-size: 1.16rem; }
     .project p { margin: 14px 0 0; color: var(--muted); }
@@ -280,24 +281,12 @@
 
           <article class="project">
             <figure class="project-visual">
-              <svg viewBox="0 0 480 240" role="img" aria-labelledby="school-art-title" xmlns="http://www.w3.org/2000/svg">
-                <title id="school-art-title">Illustrated school model with lights and a windmill</title>
-                <rect width="480" height="240" fill="#e8eee6"/>
-                <circle cx="370" cy="55" r="25" fill="#f3dfc8"/>
-                <path d="m86 158 131-68 161 69-133 69z" fill="#b9cbbb" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
-                <path d="m86 158 159 70v-71L86 89z" fill="#789a80" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
-                <path d="m245 228 133-69V88l-133 69z" fill="#52775f" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
-                <path d="m86 89 132-68 160 67-133 69z" fill="#d9e5d9" stroke="#315947" stroke-width="3" stroke-linejoin="round"/>
-                <path d="m153 122 31 14v27l-31-14zM202 144l25 11v28l-25-11zM272 155l29-15v27l-29 15zM321 129l30-15v27l-30 15z" fill="#f3dfc8" stroke="#315947" stroke-width="2"/>
-                <path d="M399 124V48m0 0-20-18m20 18 22-15m-22 15v23" fill="none" stroke="#b85c3c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="399" cy="48" r="5" fill="#b85c3c"/>
-                <path d="M53 218h376" stroke="#c3d2c5" stroke-width="3"/>
-              </svg>
+              <img src="assets/sparks-in-our-interest.jpg" alt="Students standing with their scale school model, which includes working lights, rooftop solar panels, and a wind turbine." loading="lazy" decoding="async">
             </figure>
             <div class="project-copy">
               <h3>Sparks in Our Interest</h3>
               <span class="tag">Electrical Technology · 1st place, 2025 Middlesex Tech Expo</span>
-              <p>A scale model of my school with working lights and a windmill, built from shop materials to explore sustainable energy. It earned first place among eight projects at the 2025 Middlesex Tech Expo.</p>
+              <p>Built with classmates from shop materials, this scale school model combines working lights, rooftop solar panels, and a wind turbine to explore sustainable energy. The project earned first place among eight entries at the 2025 Middlesex Tech Expo.</p>
               <a class="project-link" href="https://drive.google.com/file/d/19LQHEqdbEwi-O47jrmDjEgJBhbJyBkG-/view?usp=sharing" target="_blank" rel="noopener noreferrer">View project file <span aria-hidden="true">&#8599;</span></a>
             </div>
           </article>
