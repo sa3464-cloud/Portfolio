@@ -215,3 +215,4 @@
   nav a { padding: 10px 0; border-top: 1px solid var(--line); }
 }
 button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+:root[data-theme="dark"] .button:hover { color: var(--paper); }
