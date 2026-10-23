@@ -110,6 +110,24 @@
     .section { padding-block: 48px; border-top: 1px solid var(--line); }
     .section-intro { max-width: 670px; color: var(--muted); }
 
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .about-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+    }
+
+    .about-card h3 { margin-bottom: 12px; font-size: 1.18rem; }
+    .about-card p { margin-bottom: 0; color: var(--muted); }
+    .about-card .detail { margin-bottom: 8px; color: var(--ink); font-weight: 700; }
+
     .project {
       display: grid;
       grid-template-columns: minmax(180px, .55fr) minmax(0, 1.45fr);
@@ -136,6 +154,7 @@
       nav { gap: 16px; }
       .hero { grid-template-columns: 1fr; padding-block: 72px; }
       .highlight { max-width: 360px; }
+      .about-grid { grid-template-columns: 1fr; }
       .project { grid-template-columns: 1fr; gap: 10px; }
     }
 
@@ -171,8 +190,23 @@
 
       <section class="section" id="about" aria-labelledby="about-title">
         <p class="eyebrow">A little about me</p>
-        <h2 id="about-title">Learning by making</h2>
-        <p class="section-intro">I am pursuing a bachelor's degree in Electrical and Computer Engineering at the New Jersey Institute of Technology, with graduation expected in 2030. Outside the classroom, I have four years of electrician training, a year of carpentry and demolition experience, and volunteer experience supporting community food service.</p>
+        <h2 id="about-title">A hands-on path into engineering</h2>
+        <p class="section-intro">My background brings together engineering study, practical trade experience, and service to my community. I like learning how things work and turning that knowledge into useful projects.</p>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Background</h3>
+            <p>I have four years of electrician training and experience in carpentry and demolition. My work in food service has also built my skills in teamwork, customer care, and keeping daily operations organized. I volunteer with community food service, supporting outreach and meal events.</p>
+          </article>
+          <article class="about-card">
+            <h3>Education</h3>
+            <p class="detail">B.S. in Electrical and Computer Engineering</p>
+            <p>New Jersey Institute of Technology (NJIT)<br>Newark, New Jersey<br>Expected graduation: 2030</p>
+          </article>
+          <article class="about-card">
+            <h3>Interests</h3>
+            <p>I’m especially interested in electrical systems, hands-on design, and sustainable energy. I enjoy exploring these ideas through 3D modeling, Python, and projects that make technology tangible—like a school model with working lights and a windmill.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="project" aria-labelledby="project-title">
