@@ -29,7 +29,7 @@ These test cases cover the single-page portfolio, its navigation and theme sourc
 | T19 | Reduced motion setting | Inspect the reduced-motion media query. | Smooth scrolling is disabled when reduced motion is requested. | Pass |
 | T20 | Keyboard focus visibility | Inspect the `:focus-visible` styles for links and buttons. | Both links and buttons receive a visible focus outline. | Pass |
 | T21 | External script and font dependencies | Search the HTML for external script sources and CSS for imported fonts. | No external script or web-font dependency is present. | Pass |
-| T22 | Test document character encoding | Inspect the dimension text in this file and scan for garbled character sequences. | The dimension reads `600 x 742` and no garbled text is present. | Pass |
+| T22 | Test document character encoding | Inspect the dimension text in this file and scan for garbled character sequences. | The dimension reads `500 x 618` and no garbled text is present. | Pass |
 
 ## Execution notes
 
