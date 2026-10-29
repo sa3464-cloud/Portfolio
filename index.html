@@ -6,10 +6,15 @@
   <meta name="description" content="Seth Abram's portfolio: electrical and computer engineering, hands-on projects, and community work.">
   <title>Seth Abram | Engineering Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>
+      @media (max-width: 720px) { .menu-enhanced nav { display: flex; } }
+    </style>
+  </noscript>
 </head>
 <body>
   <div class="shell">
-    <header>
+    <header class="menu-enhanced">
       <a class="brand" href="#home">Seth Abram</a>
       <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -115,7 +120,7 @@
 
           <article class="project">
             <figure class="project-visual">
-              <img src="assets/sparks-in-our-interest.jpg" alt="Students standing with their scale school model, which includes working lights, rooftop solar panels, and a wind turbine." width="1206" height="1491" loading="lazy" decoding="async">
+              <img src="assets/sparks-in-our-interest.jpg" alt="Students standing with their scale school model, which includes working lights, rooftop solar panels, and a wind turbine." width="600" height="742" loading="lazy" decoding="async">
             </figure>
             <div class="project-copy">
               <h3>Sparks in Our Interest</h3>
@@ -165,7 +170,6 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    siteHeader.classList.add("menu-enhanced");
     menuToggle.addEventListener("click", () => {
       const isOpen = siteHeader.classList.toggle("menu-open");
       menuToggle.setAttribute("aria-expanded", String(isOpen));
