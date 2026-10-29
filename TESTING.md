@@ -15,8 +15,8 @@ These test cases cover the single-page portfolio, its navigation and theme sourc
 | T5 | Featured project count | Count the `article.project` elements in `index.html`. | Exactly three project cards are present. | Pass |
 | T6 | Safe external links | Inspect links using `target="_blank"`. | Each external link also uses `rel="noopener noreferrer"`. | Pass |
 | T7 | Contact link destinations | Inspect the email and phone links in the Contact section. | Email uses `mailto:` and phone uses `tel:` with the expected addresses. | Pass |
-| T8 | Optimized project image dimensions | Read the image file dimensions. | The project photo is 600 x 742 pixels. | Pass |
-| T9 | Project image file size | Check the byte size of `assets/sparks-in-our-interest.jpg`. | The file is under 80 KB. | Pass |
+| T8 | Optimized project image dimensions | Read the image file dimensions. | The project photo is 500 x 618 pixels. | Pass |
+| T9 | Project image file size | Check the byte size of `assets/sparks-in-our-interest.jpg`. | The file is under 50 KB. | Pass |
 | T10 | Project image loading markup | Inspect the project photo element in `index.html`. | Width and height match the file; alt text, lazy loading, and async decoding are present. | Pass |
 | T11 | Initial mobile menu state | Inspect the header element before the inline script. | The menu enhancement class is in the initial HTML. | Pass |
 | T12 | No late menu enhancement class | Search the inline script for code that adds `menu-enhanced`. | The script does not add the class after page layout. | Pass |
@@ -34,5 +34,5 @@ These test cases cover the single-page portfolio, its navigation and theme sourc
 ## Execution notes
 
 - Results are based on source and asset assertions run against the local working tree. They verify markup, asset properties, and the presence of interaction logic; they do not claim that browser interactions were exercised.
-- The most recent Lighthouse report visible in Chrome scored 69 for mobile Performance, with CLS 0.268 and TBT 690 ms. The image was reduced from 314,869 bytes to 66,980 bytes and the mobile menu enhancement was moved into the initial HTML. Lighthouse has not been rerun since those changes.
+- A Lighthouse report captured at 6:48 PM on 2026-10-29 scored 99 for mobile Performance, with CLS 0 and TBT 100 ms. It was captured before the latest image resize. The project image was subsequently reduced from 66,980 to 43,970 bytes and from 600 x 742 to 500 x 618 pixels. Lighthouse has not been rerun after that resize.
 - Cache lifetime findings depend on response headers. GitHub Pages does not let this repository configure custom cache headers.
