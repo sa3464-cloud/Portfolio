@@ -22,7 +22,10 @@
       line-height: 1.65;
     }
 
-    a { color: var(--accent-dark); }
+    a {
+      color: var(--accent-dark);
+      transition: color 180ms ease;
+    }
     a:hover { color: var(--focus); }
     a:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 
@@ -83,6 +86,7 @@
       color: white;
       font-weight: 700;
       text-decoration: none;
+      transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
     }
 
     .button:hover { background: var(--accent-dark); color: white; }
@@ -132,6 +136,7 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--card);
+      transition: box-shadow 180ms ease, transform 180ms ease;
     }
 
     .project-visual {
@@ -166,8 +171,19 @@
       .project-grid { grid-template-columns: 1fr; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .hero h1,
+      .hero .lead {
+        animation: fade-up 520ms cubic-bezier(.2, .7, .25, 1) both;
+      }
+
+      .hero h1 { animation-delay: 40ms; }
+      .hero .lead { animation-delay: 120ms; }
     }
 
 :root[data-theme="dark"] {
@@ -198,6 +214,7 @@
   font-size: .9rem;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .menu-toggle { display: none; }
@@ -214,3 +231,83 @@
 }
 button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 :root[data-theme="dark"] .button:hover { color: var(--paper); }
+
+nav a {
+  position: relative;
+  text-decoration: none;
+}
+
+nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  nav a:hover::after,
+  nav a:focus-visible::after { transform: scaleX(1); }
+
+  .button:hover,
+  .menu-toggle:hover,
+  .theme-toggle:hover {
+    box-shadow: 0 5px 14px rgb(23 42 53 / 12%);
+    transform: translateY(-2px);
+  }
+
+  .project:hover {
+    box-shadow: 0 14px 30px rgb(23 42 53 / 12%);
+    transform: translateY(-4px);
+  }
+
+  html.motion-ready .project.is-visible:hover {
+    box-shadow: 0 14px 30px rgb(23 42 53 / 12%);
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-ready .project {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: box-shadow 180ms ease, opacity 420ms ease, transform 420ms cubic-bezier(.2, .7, .25, 1);
+  }
+
+  html.motion-ready .project.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html.motion-ready .project.is-visible:hover {
+    transition-delay: 0ms;
+    transition-duration: 180ms;
+  }
+
+  html.motion-ready .project:nth-child(2) { transition-delay: 60ms; }
+  html.motion-ready .project:nth-child(3) { transition-delay: 120ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  html.motion-ready .project {
+    opacity: 1;
+    transform: none;
+  }
+}
