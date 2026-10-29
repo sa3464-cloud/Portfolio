@@ -15,7 +15,7 @@ These test cases cover the single-page portfolio, its navigation and theme sourc
 | T5 | Featured project count | Count the `article.project` elements in `index.html`. | Exactly three project cards are present. | Pass |
 | T6 | Safe external links | Inspect links using `target="_blank"`. | Each external link also uses `rel="noopener noreferrer"`. | Pass |
 | T7 | Contact link destinations | Inspect the email and phone links in the Contact section. | Email uses `mailto:` and phone uses `tel:` with the expected addresses. | Pass |
-| T8 | Optimized project image dimensions | Read the image file dimensions. | The project photo is 600 × 742 pixels. | Pass |
+| T8 | Optimized project image dimensions | Read the image file dimensions. | The project photo is 600 x 742 pixels. | Pass |
 | T9 | Project image file size | Check the byte size of `assets/sparks-in-our-interest.jpg`. | The file is under 80 KB. | Pass |
 | T10 | Project image loading markup | Inspect the project photo element in `index.html`. | Width and height match the file; alt text, lazy loading, and async decoding are present. | Pass |
 | T11 | Initial mobile menu state | Inspect the header element before the inline script. | The menu enhancement class is in the initial HTML. | Pass |
@@ -29,6 +29,7 @@ These test cases cover the single-page portfolio, its navigation and theme sourc
 | T19 | Reduced motion setting | Inspect the reduced-motion media query. | Smooth scrolling is disabled when reduced motion is requested. | Pass |
 | T20 | Keyboard focus visibility | Inspect the `:focus-visible` styles for links and buttons. | Both links and buttons receive a visible focus outline. | Pass |
 | T21 | External script and font dependencies | Search the HTML for external script sources and CSS for imported fonts. | No external script or web-font dependency is present. | Pass |
+| T22 | Test document character encoding | Inspect the dimension text in this file and scan for garbled character sequences. | The dimension reads `600 x 742` and no garbled text is present. | Pass |
 
 ## Execution notes
 
